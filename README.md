@@ -1,5 +1,13 @@
 ##  iperf3 - binaries for windows  
 Benchmark your network limits  
+<div align="center">
+
+![iperf3](https://img.shields.io/badge/-iperf3-D8BFD8?logo=speedtest&logoColor=3a3a3d)
+&nbsp;&nbsp;[![release](https://img.shields.io/github/v/release/ar51an/iperf3-win-builds?display_name=release&logo=rstudio&color=90EE90&logoColor=8FBC8F)](https://github.com/ar51an/iperf3-win-builds/releases/latest/)
+&nbsp;&nbsp;![downloads](https://img.shields.io/github/downloads/ar51an/iperf3-win-builds/total?color=orange&label=downloads&logo=github)
+&nbsp;&nbsp;![visitors](https://shields-io-visitor-counter.herokuapp.com/badge?page=ar51an.iperf3-win-builds&label=visitors&logo=github&color=4883c2)
+&nbsp;&nbsp;![stars](https://img.shields.io/github/stars/ar51an/iperf3-win-builds?style=social&logo=apachespark)
+</div>
 
 ### Intro
 iperf3 can be used to measure maximum network throughput. It allows to calibrate several parameters like timing, buffers, protocols and streams that can help in network optimization. Each test shows various network performance metrics including throughput, jitter and packet loss. iperf3 results are considered much more accurate and reliable.  
@@ -35,7 +43,16 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Links
 Manual &nbsp;•&nbsp; https://software.es.net/iperf/invoking.html#iperf3-manual-page  
 Source Code &nbsp;•&nbsp; https://github.com/esnet/iperf  
-Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php  
+Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php
+  > Few More US Public Servers:
+  > |Server Name                         |Location|Ports    |
+  > |:-----------------------------------|:-------|:--------|
+  > |nyc.speedtest.clouvider.net         |NY      |5200-5209|
+  > |speedgauge2.optonline.net           |NY      |5201     |
+  > |charlotte02.speedtest.windstream.net|NC      |5201     |
+  > |iperf3.velocityonline.net           |FL      |5201-5210|
+  > |la.speedtest.clouvider.net          |LA      |5200-5209|
+  > |iperf.scottlinux.com                |CA      |5201     |
 
 #
 ### Disclaimer  
