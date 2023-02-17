@@ -9,6 +9,8 @@ Benchmark your network limits
 &nbsp;&nbsp;![stars](https://img.shields.io/github/stars/ar51an/iperf3-win-builds?style=social&logo=apachespark)
 </div>
 
+<div align="justify">
+
 ### Intro
 iperf3 can be used to measure maximum network throughput. It allows to calibrate several parameters like timing, buffers, protocols and streams that can help in network optimization. Each test shows various network performance metrics including throughput, jitter and packet loss. iperf3 results are considered much more accurate and reliable.  
 
@@ -18,6 +20,7 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Builds
 |iperf Ver|Cygwin Ver      |OS          |OpenSSL Ver|
 |:-------:|:--------------:|:----------:|:---------:|
+|3.13     |3.4.6-1.x86_64  |Win11 64-bit|1.1.1s     |
 |3.12     |3.3.6-341.x86_64|Win11 64-bit|1.1.1q     |
 |3.11     |3.3.4-341.x86_64|Win10 64-bit|1.1.1m     |
 |3.10.1   |3.3.3-341.x86_64|Win10 64-bit|1.1.1l     |
@@ -58,3 +61,4 @@ Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php
 #
 ### Disclaimer  
 > This repo is not associated with iperf, ESnet. iperf source code copyright and disclaimer applies to this binary distribution.  
+</div>
