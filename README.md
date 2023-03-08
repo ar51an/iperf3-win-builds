@@ -45,12 +45,16 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 #
 
 ### Links
-Manual &nbsp;•&nbsp; https://software.es.net/iperf/invoking.html#iperf3-manual-page  
-Source Code &nbsp;•&nbsp; https://github.com/esnet/iperf  
-Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php  
-https://as62240.net/speedtest
+* **Manual:**  
+  • https://software.es.net/iperf/invoking.html#iperf3-manual-page
+* **Source Code:**  
+  • https://github.com/esnet/iperf
+* **Public Servers:**  
+  • https://github.com/R0GGER/public-iperf3-servers  
+  • https://as62240.net/speedtest  
+  • https://iperf.fr/iperf-servers.php  
+  • Few More US Servers:
 
-  > Few More US Public Servers:
   > |Server Name                         |Location|Ports    |
   > |:-----------------------------------|:-------|:--------|
   > |nyc.speedtest.clouvider.net         |NY      |5200-5209|
@@ -59,6 +63,13 @@ https://as62240.net/speedtest
   > |iperf3.velocityonline.net           |FL      |5201-5210|
   > |la.speedtest.clouvider.net          |LA      |5200-5209|
   > |iperf.scottlinux.com                |CA      |5201     |
+
+#
+### Speed Test
+• TCP Download &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -P 10 -4 -R  
+• TCP Upload &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -P 10 -4  
+• UDP Download &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -u -P 10 -4 -R  
+• UDP Upload &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -u -P 10 -4
 
 #
 ### Disclaimer  
