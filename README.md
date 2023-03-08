@@ -47,7 +47,9 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Links
 Manual &nbsp;•&nbsp; https://software.es.net/iperf/invoking.html#iperf3-manual-page  
 Source Code &nbsp;•&nbsp; https://github.com/esnet/iperf  
-Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php
+Public Servers &nbsp;•&nbsp; https://iperf.fr/iperf-servers.php  
+https://as62240.net/speedtest
+
   > Few More US Public Servers:
   > |Server Name                         |Location|Ports    |
   > |:-----------------------------------|:-------|:--------|
