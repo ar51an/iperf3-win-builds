@@ -20,6 +20,7 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Builds
 |iperf Ver|Cygwin Ver      |OS          |OpenSSL Ver|
 |:-------:|:--------------:|:----------:|:---------:|
+|3.13-mt1 |3.4.6-1.x86_64  |Win11 64-bit|1.1.1t     |
 |3.13     |3.4.6-1.x86_64  |Win11 64-bit|1.1.1s     |
 |3.12     |3.3.6-341.x86_64|Win11 64-bit|1.1.1q     |
 |3.11     |3.3.4-341.x86_64|Win10 64-bit|1.1.1m     |
@@ -31,13 +32,15 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 &nbsp;•&nbsp; Download | Upload | Client mode | Server mode | Parallel streams  
 
 #### Distribution
+* _Version 3.13-mt1 onwards, slight build optimization to create significantly smaller binary_
+
 * Variations of available distributions summarized below:
   
-  > |Distro Name                     |OpenSSL|Extra Feature |Info         |
-  > |:-------------------------------|:------|:-------------|:------------|
-  > |`iperf-<ver>-win64`             |No     |              |`Recommended`|
-  > |`iperf-<ver>-win64-static-auth` |Yes    |authentication|             |
-  > |`iperf-<ver>-win64-dynamic-auth`|Yes    |authentication|             |
+  > |Distro Name                         |OpenSSL|Extra Feature |Info         |
+  > |:-----------------------------------|:------|:-------------|:------------|
+  > |`iperf-<ver>-win64.zip`             |No     |              |`Recommended`|
+  > |`iperf-<ver>-win64-static-auth.zip` |Yes    |authentication|             |
+  > |`iperf-<ver>-win64-dynamic-auth.zip`|Yes    |authentication|             |
 
 #
 > **_NOTE:_**  
@@ -45,15 +48,12 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 #
 
 ### Links
-* **Manual:**  
-  • https://software.es.net/iperf/invoking.html#iperf3-manual-page
-* **Source Code:**  
-  • https://github.com/esnet/iperf
+* **Reference**  
+Updates about iperf3 Windows binary release are available in a discussion thread at [Neowin](https://www.neowin.net/forum/topic/1234695-iperf/) maintained by _**budman**_. It is mentioned in official docs at [Obtaining iperf3](https://github.com/esnet/iperf/blob/master/docs/obtaining.rst).
 * **Public Servers:**  
-  • https://github.com/R0GGER/public-iperf3-servers  
+  • https://github.com/R0GGER/public-iperf3-servers - `Recommended`  
   • https://as62240.net/speedtest  
-  • https://iperf.fr/iperf-servers.php  
-  • Few More US Servers:
+  • Few US Servers:
 
   > |Server Name                         |Location|Ports    |
   > |:-----------------------------------|:-------|:--------|
@@ -64,14 +64,21 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
   > |la.speedtest.clouvider.net          |LA      |5200-5209|
   > |iperf.scottlinux.com                |CA      |5201     |
 
-#
-### Speed Test
-• TCP Download &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -P 10 -4 -R  
-• TCP Upload &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -P 10 -4  
-• UDP Download &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -u -P 10 -4 -R  
-• UDP Upload &nbsp;➟&nbsp; iperf3.exe -c charlotte02.speedtest.windstream.net -u -P 10 -4
+* **Manual:**  
+  • https://software.es.net/iperf/invoking.html#iperf3-manual-page
+* **Source Code:**  
+  • https://github.com/esnet/iperf
 
 #
+### Speed Test
+|Test        |Cmd                                    |
+|:-----------|:--------------------------------------|
+|TCP Download|`iperf3.exe -c <server> -P 10 -4 -R`   |
+|TCP Upload  |`iperf3.exe -c <server> -P 10 -4`      |
+|UDP Download|`iperf3.exe -c <server> -u -P 10 -4 -R`|
+|UDP Upload  |`iperf3.exe -c <server> -u -P 10 -4`   |
+  
+#
 ### Disclaimer  
-> This repo is not associated with iperf, ESnet. iperf source code copyright and disclaimer applies to this binary distribution.  
+> esnet/iperf source code copyright and disclaimer applies to this binary distribution. Check [License](https://github.com/esnet/iperf/blob/master/LICENSE) for further details.
 </div>
