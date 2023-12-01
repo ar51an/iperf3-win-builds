@@ -20,6 +20,7 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Builds
 |iperf Ver    |Cygwin Ver      |OS          |OpenSSL Ver|
 |:-----------:|:--------------:|:----------:|:---------:|
+|3.16         |3.4.10-1.x86_64 |Win11 64-bit|3.0.12     |
 |3.15         |3.4.9-1.x86_64  |Win11 64-bit|3.0.10     |
 |3.14         |3.4.7-1.x86_64  |Win11 64-bit|3.0.9      |
 |3.13-mt-beta2|3.4.6-1.x86_64  |Win11 64-bit|1.1.1t     |
@@ -34,12 +35,12 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 * Each binary goes through below tests before release:  
 &nbsp;•&nbsp; Download | Upload | Client mode | Server mode | Parallel streams  
 
-#### Distribution
+#### Release
 * _Version 3.13-mt1 onwards, slight build optimization to create significantly smaller binary_
 
-* Variations of available distributions summarized below:
+* Variations of available release files summarized below:
   
-  > |Distro Name                         |OpenSSL|Extra Feature |Info         |
+  > |Release File                        |OpenSSL|Extra Feature |Info         |
   > |:-----------------------------------|:------|:-------------|:------------|
   > |`iperf-<ver>-win64.zip`             |No     |              |`Recommended`|
   > |`iperf-<ver>-win64-static-auth.zip` |Yes    |authentication|             |
