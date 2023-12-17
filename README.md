@@ -77,10 +77,10 @@ Updates about iperf3 Windows binary release are available in a discussion thread
 ### Speed Test
 |Test        |Cmd                                    |
 |:-----------|:--------------------------------------|
-|TCP Download|`iperf3.exe -c <server> -P 10 -4 -R`   |
-|TCP Upload  |`iperf3.exe -c <server> -P 10 -4`      |
-|UDP Download|`iperf3.exe -c <server> -u -P 10 -4 -R`|
-|UDP Upload  |`iperf3.exe -c <server> -u -P 10 -4`   |
+|TCP Download|`iperf3.exe -c <server> -P 10 -R`      |
+|TCP Upload  |`iperf3.exe -c <server> -P 10`         |
+|UDP Download|`iperf3.exe -c <server> -u -P 10 -R`   |
+|UDP Upload  |`iperf3.exe -c <server> -u -P 10`      |
   
 #
 ### Disclaimer  
