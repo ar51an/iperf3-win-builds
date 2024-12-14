@@ -20,9 +20,9 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Builds
 |iperf Ver    |Cygwin Ver      |OS          |OpenSSL Ver|
 |:-----------:|:--------------:|:----------:|:---------:|
+|3.18         |3.5.4-1.x86_64  |Win11 64-bit|3.0.15     |
 |3.17.1       |3.5.3-1.x86_64  |Win11 64-bit|3.0.13     |
 |3.16         |3.4.10-1.x86_64 |Win11 64-bit|3.0.12     |
-|3.15         |3.4.9-1.x86_64  |Win11 64-bit|3.0.10     |
 
 #### Benchmark
 * Many folks use iperf to evaluate internet speed. Public servers are available under links section.  
@@ -37,6 +37,7 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
   > |`iperf-<ver>-win64.zip`             |No     |              |`Recommended`|
   > |`iperf-<ver>-win64-static-auth.zip` |Yes    |authentication|             |
   > |`iperf-<ver>-win64-dynamic-auth.zip`|Yes    |authentication|             |
+  > |`iperf-<ver>-win7-64Bit.zip`        |No     |              |For Win7     |
 
 #
 > **_NOTE:_**  
