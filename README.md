@@ -20,9 +20,9 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 ### Builds
 |iperf Ver    |Cygwin Ver      |OS          |OpenSSL Ver|
 |:-----------:|:--------------:|:----------:|:---------:|
+|3.22         |3.6.10-1.x86_64 |Win11 64-bit|3.5.8      |
 |3.21         |3.6.7-1.x86_64  |Win11 64-bit|3.0.19     |
 |3.20         |3.6.5-1.x86_64  |Win11 64-bit|3.0.18     |
-|3.19.1       |3.6.4-1.x86_64  |Win11 64-bit|3.0.17     |
 
 #### Benchmark
 * Many folks use iperf to evaluate internet speed. Public servers are available under links section.  
