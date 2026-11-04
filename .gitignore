@@ -1,0 +1,7 @@
+.build/
+.audit-*/
+.cygwin-cache/
+.cygwin64/
+.tooling/
+.upstream-*/
+dist/

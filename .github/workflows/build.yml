@@ -1,0 +1,90 @@
+name: Build and test Cygwin binary
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/build.yml"
+      - "scripts/**"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build.yml"
+      - "scripts/**"
+  workflow_dispatch:
+    inputs:
+      iperf_version:
+        description: ESnet/iperf tag to build
+        required: true
+        default: "3.22"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      IPERF_VERSION: ${{ inputs.iperf_version || '3.22' }}
+
+    steps:
+      - name: Check out packaging repository
+        uses: actions/checkout@v4
+
+      - name: Install Cygwin build dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $setup = Join-Path $env:RUNNER_TEMP 'setup-x86_64.exe'
+          Invoke-WebRequest -Uri 'https://cygwin.com/setup-x86_64.exe' -OutFile $setup
+
+          $signature = Get-AuthenticodeSignature -LiteralPath $setup
+          if ($signature.Status -ne 'Valid') {
+            throw "Cygwin installer signature is $($signature.Status), not Valid."
+          }
+
+          $setupArgs = @(
+            '-q', '-B', '-n', '-N',
+            '-R', 'C:\cygwin64',
+            '-s', 'https://mirrors.kernel.org/sourceware/cygwin/',
+            '-P', 'autoconf,automake,gcc-core,git,libtool,make,pkg-config'
+          )
+          $install = Start-Process -FilePath $setup `
+            -ArgumentList $setupArgs `
+            -Wait `
+            -PassThru `
+            -WindowStyle Hidden
+          if ($install.ExitCode -ne 0) {
+            throw "Cygwin setup exited with code $($install.ExitCode)"
+          }
+
+      - name: Build unmodified upstream source and run upstream tests
+        shell: pwsh
+        run: C:\cygwin64\bin\bash.exe --login -c 'cd "$(/usr/bin/cygpath -u "$GITHUB_WORKSPACE")" && ./scripts/build-cygwin.sh'
+
+      - name: Run Windows client/server smoke test
+        shell: pwsh
+        run: |
+          $package = Get-ChildItem -LiteralPath dist -Directory | Select-Object -First 1
+          if (-not $package) { throw 'The build did not produce a package directory.' }
+          ./scripts/Test-IperfBuild.ps1 -PackageDirectory $package.FullName
+
+      - name: Package binary and create SHA-256 checksum
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $package = Get-ChildItem -LiteralPath dist -Directory | Select-Object -First 1
+          $zip = Join-Path $PWD ("dist/{0}.zip" -f $package.Name)
+          Compress-Archive -LiteralPath $package.FullName -DestinationPath $zip
+          $hash = Get-FileHash -LiteralPath $zip -Algorithm SHA256
+          "{0}  {1}" -f $hash.Hash.ToLowerInvariant(), (Split-Path $zip -Leaf) |
+            Set-Content -LiteralPath (Join-Path $PWD 'dist/SHA256SUMS')
+
+      - name: Upload tested package
+        uses: actions/upload-artifact@v4
+        with:
+          name: iperf-${{ env.IPERF_VERSION }}-win64
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS
+          if-no-files-found: error

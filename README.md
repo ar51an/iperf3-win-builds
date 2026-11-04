@@ -29,6 +29,22 @@ Last official binary release version was 3.1.3 for Windows in 2016 . This repo i
 * Each binary goes through below tests before release:  
 &nbsp;•&nbsp; Download | Upload | Client mode | Server mode | Parallel streams  
 
+#### Build from source
+The build workflow compiles an unmodified [ESnet/iperf](https://github.com/esnet/iperf) release tag under Cygwin. It runs the upstream test suite and a Windows client/server loopback transfer before creating an artifact. Every artifact includes:
+
+* the exact upstream commit and configure flags;
+* the Cygwin package manifest and runtime dependency report;
+* `iperf3.exe`, `cygwin1.dll`, and the upstream license; and
+* a SHA-256 checksum for the ZIP archive.
+
+To create a build in GitHub, open **Actions → Build and test Cygwin binary → Run workflow** and enter the ESnet/iperf tag. To reproduce it locally, install Cygwin with `autoconf`, `automake`, `gcc-core`, `git`, `libtool`, `make`, and `pkg-config`, then run:
+
+```bash
+IPERF_VERSION=3.22 ./scripts/build-cygwin.sh
+```
+
+The recommended build intentionally passes `--without-openssl`; authentication-enabled variants require an OpenSSL-enabled build and additional runtime libraries.
+
 #### Release
 * Variations of available release files summarized below:
   
