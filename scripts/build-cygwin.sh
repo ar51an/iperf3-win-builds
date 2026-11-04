@@ -35,11 +35,11 @@ printf '%s\n' "Stripping packaged executable..."
 strip --strip-unneeded "${package_dir}/iperf3.exe"
 
 printf '%s\n' "Recording version and runtime dependencies..."
-if ! "${package_dir}/iperf3.exe" --version > "${package_dir}/version.txt"; then
-    printf 'Packaged executable failed its version probe: %s\n' "${package_dir}/iperf3.exe" >&2
+if ! "${binary}" --version > "${package_dir}/version.txt"; then
+    printf 'Linked executable failed its version probe: %s\n' "${binary}" >&2
     exit 1
 fi
-if ! cygcheck "${package_dir}/iperf3.exe" > "${package_dir}/dependencies.txt"; then
+if ! cygcheck "${binary}" > "${package_dir}/dependencies.txt"; then
     printf '%s\n' "Warning: cygcheck could not record runtime dependencies." >&2
 fi
 if ! cygcheck -c > "${package_dir}/cygwin-packages.txt"; then
