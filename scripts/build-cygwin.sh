@@ -29,12 +29,17 @@ fi
 
 rm -rf "${package_dir}"
 mkdir -p "${package_dir}"
+printf '%s\n' "Packaging linked binary and Cygwin runtime..."
 cp "${binary}" /bin/cygwin1.dll LICENSE "${package_dir}/"
+printf '%s\n' "Stripping packaged executable..."
 strip --strip-unneeded "${package_dir}/iperf3.exe"
 
+printf '%s\n' "Recording version and runtime dependencies..."
 "${package_dir}/iperf3.exe" --version > "${package_dir}/version.txt"
 cygcheck "${package_dir}/iperf3.exe" > "${package_dir}/dependencies.txt"
-cygcheck -c > "${package_dir}/cygwin-packages.txt"
+if ! cygcheck -c > "${package_dir}/cygwin-packages.txt"; then
+    printf '%s\n' "Warning: cygcheck reported an incomplete package inventory." >&2
+fi
 
 cat > "${package_dir}/build-metadata.txt" <<EOF
 iperf_version=${version}
